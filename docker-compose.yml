@@ -4,7 +4,7 @@ services:
   web:
     build: ./docker/web
     ports:
-      - "8080:80"
+      - "8888:80"
     volumes:
       - .:/var/www/html
       - ./docker/web/sites-available:/etc/apache2/sites-available
@@ -13,8 +13,8 @@ services:
     image: postgres
     restart: always
     ports:
-      - "5555:5555"
+      - "5432:5432"
     environment:
-      POSTGRES_DB: telegram-bot
+      POSTGRES_DB: telegrams
       POSTGRES_USER: user
       POSTGRES_PASSWORD: password
